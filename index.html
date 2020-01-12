@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dr Mario Counter</title>
+        <style>
+            body {
+                font-family:'Google Sans',sans-serif;
+            }
+            #big {
+                margin-right:100px;
+                font-size:25px;
+                color:red;
+            }
+            #big1 {
+                margin-left:100px;
+                font-size:25px;
+                color:red;
+            }
+            .midle {
+                font-size:50px;
+                color:gold;
+            }
+            .under {
+                margin-left:100px;
+                margin-right:100px;
+            }
+            .btn,.btn1 {
+                color:white;
+                background:green;
+                border:2px solid orange;
+                padding:15px;
+                font-family:'Google Sans',sans-serif;
+                cursor:pointer;
+                border-radius:5px;
+                margin:20px;
+            }
+            button:focus {
+                outline:0;
+            }
+            #modal {
+                display:none;
+            }
+            .container {
+                background:aliceblue;
+                width:50%;
+                margin-left:360px;
+                padding:15px;
+            }
+            #modal {
+            position: fixed; z-index: 101; top: 33%; left: 25%; width: 50%; background:gold; color:white;
+                padding:20px;
+            }
+        </style>
+        <script>
+              var one = 1;
+            var two = 1;
+      function oneup() {
+        var ve= document.getElementById("big");
+        ve.innerHTML = one++;
+          if (one == 4) {
+              document.getElementById("modal").style.display = "block"
+              document.getElementById("modaltitle").innerHTML = document.getElementById("under").innerHTML + " Wins!";
+          }
+      }
+                  function twoup() {
+        var vs= document.getElementById("big1");
+        vs.innerHTML = two++;
+                                if (two == 4) {
+              document.getElementById("modal").style.display = "block"
+              document.getElementById("modaltitle").innerHTML = document.getElementById("under1").innerHTML + " Wins!";
+          }
+
+      }
+        </script>
+    </head>
+    <body align="center"><br><br><br><br><br><br><br><br>
+        <h1>Score</h1>
+        <div class="container"><span id="big"contentEditable="true">0</span><span class="midle">-</span><span id="big1"contentEditable="true" >0</span><br>
+            <span class="under" id="under" contentEditable="true">Player 1</span> <span class="under" id="under1" contentEditable="true" >Player 2</span><br>
+            <button class="btn" onclick="oneup()">Up one point</button><button class="btn1" onclick="twoup()">Up one point</button>
+        </div>
+        <div id="modal">
+            <h1 id="modaltitle"></h1>
+            <p>Congradulations!</p>
+            <a href="" style="color:blue;">Restart</a>
+        </div>
+    </body>
+</html>
